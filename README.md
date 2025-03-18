@@ -31,6 +31,8 @@ UCID: 30198281
    ```sh
    docker run -p 8080:8080 --name demo-container jabezchowdhury/demo-app:774f5fa
 
+Do not forget to add /demo at the end of the URL.
+
 ## Demo - demonstrates an application and tests
 
 This is an application by [Coveros](https://www.coveros.com/) to demonstrate good
