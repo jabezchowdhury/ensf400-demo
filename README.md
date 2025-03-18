@@ -12,7 +12,7 @@ UCID: 31088943
 Hasnain Haider
 UCID: 30198281
 
-# Running the Application with Docker
+## Running the Application with Docker
 
 1. **Pull the latest image**  
    ```sh
@@ -20,6 +20,16 @@ UCID: 30198281
 2. **Run the container**
    ```sh
    docker run -p 8080:8080 --name demo-container jabezchowdhury/demo-app:latest
+
+## Pulling and Running a Specific Version (unique build tag(s) matching the triggering commit)
+
+1. **Pull the latest image**  
+   ```sh
+   docker pull jabezchowdhury/demo-app:774f5fa
+
+2. **Run the container**
+   ```sh
+   docker run -p 8080:8080 --name demo-container jabezchowdhury/demo-app:774f5fa
 
 ## Demo - demonstrates an application and tests
 
