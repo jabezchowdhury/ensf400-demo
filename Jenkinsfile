@@ -16,21 +16,11 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh './gradlew build'
-                sh 'cp build/libs/*.war demo.war'  // ← Add this
+                sh 'cp build/libs/*.war demo.war'
                 script {
                     dockerImage = docker.build("${IMAGE_NAME}:${COMMIT_HASH}")
-                }
-            }
-        }
-
-
-
-        stage('Push to Docker Hub') {
-            steps {
-                withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
-                    script {
-                        dockerImage.push()
-                    }
+                    dockerImage.push("${COMMIT_HASH}")
+                    dockerImage.push("latest")
                 }
             }
         }
