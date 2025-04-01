@@ -19,8 +19,17 @@ pipeline {
                 sh 'cp build/libs/*.war demo.war'
                 script {
                     dockerImage = docker.build("${IMAGE_NAME}:${COMMIT_HASH}")
-                    dockerImage.push("${COMMIT_HASH}")
-                    dockerImage.push("latest")
+                }
+            }
+        }
+
+        stage('Push to Docker Hub') {
+            steps {
+                withDockerRegistry([credentialsId: 'docker-hub-credentials', url: '']) {
+                    script {
+                        dockerImage.push("${COMMIT_HASH}")
+                        dockerImage.push("latest")
+                    }
                 }
             }
         }
