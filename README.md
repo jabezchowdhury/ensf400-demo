@@ -25,11 +25,11 @@ UCID: 30198281
 
 1. **Pull the latest image**  
    ```sh
-   docker pull jabezchowdhury/demo-app:774f5fa
+   docker pull jabezchowdhury/demo-app:<commit-hash>
 
 2. **Run the container**
    ```sh
-   docker run -p 8080:8080 --name demo-container jabezchowdhury/demo-app:774f5fa
+   docker run -p 8080:8080 --name demo-container jabezchowdhury/demo-app:<commit-hash>
 
 Do not forget to add /demo at the end of the URL.
 
