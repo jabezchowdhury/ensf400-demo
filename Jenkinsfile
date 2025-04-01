@@ -16,11 +16,13 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 sh './gradlew build'
+                sh 'cp build/libs/*.war demo.war'  // ← Add this
                 script {
                     dockerImage = docker.build("${IMAGE_NAME}:${COMMIT_HASH}")
                 }
             }
         }
+
 
 
         stage('Push to Docker Hub') {

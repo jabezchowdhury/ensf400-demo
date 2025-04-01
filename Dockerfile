@@ -5,7 +5,7 @@ FROM tomcat:9.0
 WORKDIR /usr/local/tomcat/webapps/
 
 # Copy WAR file into Tomcat webapps directory
-COPY build/libs/ensf400-demo-1.0.0.war demo.war
+COPY demo.war demo.war
 
 # Expose default Tomcat port
 EXPOSE 8080
