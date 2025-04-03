@@ -1,3 +1,5 @@
+## As of 4/2/2025 this repo is no longer in use, as we transition the project to a private repo. 
+
 ## Group 62
 
 Alex Tong
